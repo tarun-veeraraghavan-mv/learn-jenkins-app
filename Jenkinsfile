@@ -48,10 +48,9 @@ pipeline {
           }
           steps {
             sh '''
-              npm install
-              npx netlify --version
-              echo "Deploying to prod"
-              echo "Deploy to prod with SIDE ID: $NETLIFY_SITE_ID" 
+              npm install netlify-cli
+              ./node_modules/.bin/netlify --version
+              echo "Deploying to prod with SITE ID: $NETLIFY_SITE_ID"
             '''
           }
         }
